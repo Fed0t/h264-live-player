@@ -1,5 +1,7 @@
 var WSAvcPlayer = require('../vendor');
 
+window.WSAvcPlayer = WSAvcPlayer; // We want this to be accessible from outside the "browserification".
+
 
 var canvas = document.createElement("canvas");
 document.body.appendChild(canvas);
