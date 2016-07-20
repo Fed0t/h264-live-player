@@ -129,7 +129,7 @@ var WSAvcPlayer = new Class({
 
             this.sioClient.on('stream', function(bytes) {
                 this.pktnum++;
-                var data = new Uint8Array(evt.data);
+                var data = new Uint8Array(bytes);
                 console.log("WSAvcPlayer: [Pkt " + this.pktnum + " (" + data.byteLength + " bytes)]");
                 var date = new Date();
                 this.rcvtime = date.getTime();
@@ -174,7 +174,6 @@ var WSAvcPlayer = new Class({
         }
 
     },
-
 
     initCanvas: function (width, height) {
         if (this.canvastype == "webgl") {
